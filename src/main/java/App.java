@@ -23,13 +23,28 @@ public class App {
 
     post("/words", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+
       String wordName = request.queryParams("word");
       Word newWord = new Word(wordName);
-
       model.put("allWords", Word.all());
 
       model.put("template", "templates/words.vtl");
       return new ModelAndView (model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/words/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      Integer wordId = Integer.parseInt(request.params(":id"));
+      Word word = Word.find(wordId);
+      model.put("word", word);
+
+      ArrayList<Definition> definitions = word.getDefinitions();
+      model.put("definitions", definitions);
+
+      model.put("template", "templates/word.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 }

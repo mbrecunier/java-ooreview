@@ -33,4 +33,14 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("Butter");
   }
+
+  @Test
+  public void eachWordHasOwnPage() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add new word"));
+    fill("#word").with("Salsa");
+    submit(".btn");
+    click("a", withText("Salsa"));
+    assertThat(pageSource()).contains("Add a new definition");
+  }
 }

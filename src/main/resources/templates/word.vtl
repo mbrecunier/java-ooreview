@@ -1,0 +1,17 @@
+#if ($word)
+  <h2>$word.getName()</h2>
+  <p><a href="/words/$word.getId()/definitions/new">Add a new definition</a></p>
+  #if ($definitions)
+    <ul>
+    #foreach($definition in $word.getDefinitions())
+      <li>$definition.getDescription()</li>
+    #end
+    </ul>
+  #else
+     <p>This word has no definitions yet.</p>
+  #end
+#else
+  <h3>Word not found</h1>
+#end
+
+<a href="/words">View all words</a>
