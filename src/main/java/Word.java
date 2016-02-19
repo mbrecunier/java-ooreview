@@ -5,11 +5,13 @@ public class Word {
 
   private String mName;
   private int mId;
+  private static ArrayList<Definition> mDefinitions;
 
   public Word(String name) {
     mName = name;
     allWords.add(this);
     mId = allWords.size();
+    mDefinitions = new ArrayList<Definition>();
   }
 
   public String getName() {
@@ -22,5 +24,9 @@ public class Word {
 
   public int getId() {
     return mId;
+  }
+
+  public static ArrayList getDefinitions() {
+    return mDefinitions;
   }
 }

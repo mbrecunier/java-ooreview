@@ -30,4 +30,10 @@ public class WordTest {
     assertTrue(Word.all().size() == testWord.getId());
   }
 
+  @Test
+  public void getDefinitions_initiallyReturnsEmptyArrayList() {
+    Word newWord = new Word("Dolphin");
+    assertEquals(0, newWord.getDefinitions().size());
+  }
+
 }
