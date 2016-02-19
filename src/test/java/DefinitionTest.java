@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 public class DefinitionTest {
 
@@ -20,6 +21,14 @@ public class DefinitionTest {
     Definition testDef = new Definition("a furry thing");
     testDef.setPartOfSpeech("noun");
     assertEquals("noun", testDef.getPartOfSpeech());
+  }
+
+  @Test
+  public void all_returnsAllInstanceOfDefinition_true() {
+    Definition testDef1 = new Definition("type of bird");
+    Definition testDef2 = new Definition("type of hotdog");
+    assertTrue(Definition.all().contains(testDef1));
+    assertTrue(Definition.all().contains(testDef2));
   }
 
 }
