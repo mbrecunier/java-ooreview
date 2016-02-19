@@ -5,10 +5,12 @@ public class Definition {
 
   private String mDescription;
   private String mPartOfSpeech;
+  private int mId;
 
   public Definition(String description) {
     mDescription = description;
     instances.add(this);
+    mId = instances.size();
   }
 
   public String getDescription() {
@@ -31,4 +33,7 @@ public class Definition {
     instances.clear();
   }
 
+  public int getId() {
+    return mId;
+  }
 }

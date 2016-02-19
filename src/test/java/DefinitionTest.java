@@ -40,4 +40,12 @@ public class DefinitionTest {
     assertEquals(Definition.all().size(), 0);
   }
 
+  @Test
+  public void getId_definitionsInstantiateWithAnId() {
+    Definition testDef1 = new Definition("type of bird");
+    assertEquals(Definition.all().size(), testDef1.getId());
+    Definition testDef2 = new Definition("type of hotdog");
+    assertEquals(Definition.all().size(), testDef2.getId());
+  }
+
 }
