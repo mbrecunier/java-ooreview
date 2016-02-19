@@ -5,4 +5,8 @@ public class Word {
     mName = name;
   }
 
+  public String getName() {
+    return mName;
+  }
+
 }

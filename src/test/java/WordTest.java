@@ -9,4 +9,10 @@ public class WordTest {
     assertEquals(true, testWord instanceof Word);
   }
 
+  @Test
+  public void getName_returnsWordName_cat() {
+    Word testWord = new Word("Cat");
+    assertEquals("Cat", testWord.getName());
+  }
+
 }
