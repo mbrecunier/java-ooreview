@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Definition {
-  private static ArrayList<Definition> instances = new ArrayList<Definition>();
+  private static ArrayList<Definition> allDefinitions = new ArrayList<Definition>();
 
   private String mDescription;
   private String mPartOfSpeech;
@@ -9,8 +9,8 @@ public class Definition {
 
   public Definition(String description) {
     mDescription = description;
-    instances.add(this);
-    mId = instances.size();
+    allDefinitions.add(this);
+    mId = allDefinitions.size();
   }
 
   public String getDescription() {
@@ -26,11 +26,11 @@ public class Definition {
   }
 
   public static ArrayList<Definition> all() {
-    return instances;
+    return allDefinitions;
   }
 
   public static void clear() {
-    instances.clear();
+    allDefinitions.clear();
   }
 
   public int getId() {
@@ -39,7 +39,7 @@ public class Definition {
 
   public static Definition find(int id) {
     try {
-      return instances.get(id-1);
+      return allDefinitions.get(id-1);
     } catch (IndexOutOfBoundsException e) {
       System.err.println("IndexOutOfBoundsException: " + e.getMessage());
       return null;
