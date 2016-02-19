@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class WordTest {
 
+  @Rule
+  public ClearRule clearRule = new ClearRule();
+
   @Test
   public void word_instantiatesCorrectly_true() {
     Word testWord = new Word("Cat");
@@ -34,6 +37,13 @@ public class WordTest {
   public void getDefinitions_initiallyReturnsEmptyArrayList() {
     Word newWord = new Word("Dolphin");
     assertEquals(0, newWord.getDefinitions().size());
+  }
+
+  @Test
+  public void clear_removesWordsFromArrayList() {
+    Word newWord = new Word("tax");
+    Word.clear();
+    assertEquals(Word.all().size(), 0);
   }
 
 }

@@ -29,4 +29,8 @@ public class Word {
   public static ArrayList getDefinitions() {
     return mDefinitions;
   }
+
+  public static void clear() {
+    allWords.clear();
+  }
 }
