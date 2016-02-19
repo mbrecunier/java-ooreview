@@ -1,0 +1,14 @@
+<h3>Add a Definition for $word.getName()</h3>
+
+<form action="/definitions" method="post">
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+  <div class="form-group">
+    <label for="description">Definition</label>
+    <input id="description" name="description" type="text">
+  </div>
+  <div class="form-group">
+    <label for="speech-part">Part of Speech</label>
+    <input id="speech-part" name="speech-part" type="text">
+  </div>
+  <button type="submit" class="btn btn-primary">Add definition</button>
+</form>
