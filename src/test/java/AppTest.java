@@ -13,7 +13,7 @@ public class AppTest extends FluentTest {
 
   @Override
   public WebDriver getDefaultDriver() {
-      return webDriver;
+    return webDriver;
   }
 
   @ClassRule
