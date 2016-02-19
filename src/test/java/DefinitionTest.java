@@ -15,4 +15,11 @@ public class DefinitionTest {
     assertEquals("a furry thing", testDef.getDescription());
   }
 
+  @Test
+  public void getPartOfSpeech_returnsPartOfSpeech_noun() {
+    Definition testDef = new Definition("a furry thing");
+    testDef.setPartOfSpeech("noun");
+    assertEquals("noun", testDef.getPartOfSpeech());
+  }
+
 }
