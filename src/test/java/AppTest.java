@@ -55,4 +55,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Add a Definition for Rock");
   }
 
+  @Test
+  public void definitionsAreAddedAndDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("Panther");
+    submit(".btn");
+    click("a", withText("Panther"));
+    click("a", withText("Add a new definition"));
+    fill("#description").with("a large kitty");
+    submit(".btn");
+    assertThat(pageSource()).contains("a large kitty");
+  }
+
 }

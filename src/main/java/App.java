@@ -32,6 +32,15 @@ public class App {
       return new ModelAndView (model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/words", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      model.put("allWords", Word.all());
+
+      model.put("template", "templates/words.vtl");
+      return new ModelAndView (model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/words/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
@@ -62,6 +71,11 @@ public class App {
 
       Integer wordId = Integer.parseInt(request.queryParams("wordId"));
       Word word = Word.find(wordId);
+      String newDescription = request.queryParams("description");
+      Definition newDefinition = new Definition(newDescription);
+      word.addDefinition(newDefinition);
+      String partOfSpeech = request.queryParams("speech-part");
+      newDefinition.setPartOfSpeech(partOfSpeech);
       ArrayList definitions = word.getDefinitions();
       model.put("word", word);
       model.put("definitions", definitions);
