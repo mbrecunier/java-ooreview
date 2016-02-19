@@ -48,4 +48,17 @@ public class DefinitionTest {
     assertEquals(Definition.all().size(), testDef2.getId());
   }
 
+  @Test
+  public void fine_returnsDefinitionById_testDef2() {
+    Definition testDef1 = new Definition("type of bird");
+    Definition testDef2 = new Definition("type of hotdog");
+    assertEquals(Definition.find(testDef2.getId()), testDef2);
+  }
+
+  @Test
+  public void find_returnsNullWhenNoTaskFound_null() {
+    Definition testDef = new Definition("a slow march");
+    assertTrue(Definition.find(999) == null);
+  }
+
 }
