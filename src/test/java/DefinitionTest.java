@@ -5,8 +5,14 @@ public class DefinitionTest {
 
   @Test
   public void definition_instantiatesCorrectly_true() {
-    Definition testDef = new Definition();
+    Definition testDef = new Definition("a nice surprise");
     assertEquals(true, testDef instanceof Definition);
+  }
+
+  @Test
+  public void getDescription_returnsDescription() {
+    Definition testDef = new Definition("a furry thing");
+    assertEquals("a furry thing", testDef.getDescription());
   }
 
 }

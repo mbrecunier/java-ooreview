@@ -1,7 +1,12 @@
 public class Definition {
+  private String mDescription;
 
-  public Definition() {
-    
+  public Definition(String description) {
+    mDescription = description;
+  }
+
+  public String getDescription() {
+    return mDescription;
   }
 
 }
