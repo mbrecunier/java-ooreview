@@ -1,0 +1,9 @@
+<h2>All Words</h2>
+
+<ul>
+#foreach ($word in $allWords)
+  <li><a href="words/$word.getId()">$word.getName()</a></li>
+#end
+</ul>
+
+<a href-"/words/new">Add new word</a>
