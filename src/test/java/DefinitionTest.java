@@ -3,6 +3,8 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 public class DefinitionTest {
+  @Rule
+  public ClearRule clearRule = new ClearRule();
 
   @Test
   public void definition_instantiatesCorrectly_true() {
@@ -29,6 +31,13 @@ public class DefinitionTest {
     Definition testDef2 = new Definition("type of hotdog");
     assertTrue(Definition.all().contains(testDef1));
     assertTrue(Definition.all().contains(testDef2));
+  }
+
+  @Test
+  public void clear_emptiesDefinitionsFromInstances() {
+    Definition testDef = new Definition("exotic rug");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
   }
 
 }
