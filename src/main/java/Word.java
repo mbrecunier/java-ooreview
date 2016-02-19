@@ -42,4 +42,11 @@ public class Word {
       return null;
     }
   }
+
+  public static void addDefinition(Definition def) {
+    mDefinitions.add(def);
+  }
+
+
+
 }

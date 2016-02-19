@@ -53,4 +53,12 @@ public class WordTest {
     assertEquals(Word.find(word2.getId()), word2);
   }
 
+  @Test
+  public void addDefinition_addsDefinitionToList() {
+    Word newWord = new Word("Child");
+    Definition newDef = new Definition("a small human");
+    newWord.addDefinition(newDef);
+    assertTrue(newWord.getDefinitions().contains(newDef));
+  }
+
 }
