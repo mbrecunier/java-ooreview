@@ -33,4 +33,13 @@ public class Word {
   public static void clear() {
     allWords.clear();
   }
+
+  public static Word find(int id) {
+    try {
+      return allWords.get(id-1);
+    } catch (IndexOutOfBoundsException exception) {
+      System.out.println("Index out of bounds exception: " + exception.getMessage());
+      return null;
+    }
+  }
 }
