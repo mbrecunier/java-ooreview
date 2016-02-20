@@ -3,7 +3,7 @@
 
   #if ($definitions)
     <ul>
-    #foreach($definition in $word.getDefinitions())
+    #foreach($definition in $definitions)
       <li>$definition.getDescription() $definition.getPartOfSpeech()</li>
     #end
     </ul>
