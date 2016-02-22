@@ -5,7 +5,7 @@ public class Word {
 
   private String mName;
   private int mId;
-  private static ArrayList<Definition> mDefinitions;
+  private ArrayList<Definition> mDefinitions;
 
   public Word(String name) {
     mName = name;
@@ -26,7 +26,7 @@ public class Word {
     return mId;
   }
 
-  public static ArrayList getDefinitions() {
+  public ArrayList getDefinitions() {
     return mDefinitions;
   }
 
@@ -43,7 +43,7 @@ public class Word {
     }
   }
 
-  public static void addDefinition(Definition def) {
+  public void addDefinition(Definition def) {
     mDefinitions.add(def);
   }
 
